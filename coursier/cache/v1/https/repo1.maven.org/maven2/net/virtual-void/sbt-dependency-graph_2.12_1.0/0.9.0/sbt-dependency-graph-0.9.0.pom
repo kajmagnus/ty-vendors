@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.virtual-void</groupId>
+    <artifactId>sbt-dependency-graph</artifactId>
+    <packaging>jar</packaging>
+    <description>sbt-dependency-graph</description>
+    <url>http://github.com/jrudolph/sbt-dependency-graph</url>
+    <version>0.9.0</version>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>https://github.com/jrudolph/sbt-dependency-graph/raw/master/LICENSE</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <name>sbt-dependency-graph</name>
+    <organization>
+        <name>net.virtual-void</name>
+        <url>http://github.com/jrudolph/sbt-dependency-graph</url>
+    </organization>
+    <scm>
+        <url>https://github.com/jrudolph/sbt-dependency-graph</url>
+        <connection>scm:git:git@github.com:jrudolph/sbt-dependency-graph.git</connection>
+    </scm>
+    <developers>
+        <developer>
+            <id>jrudolph</id>
+            <name>Johannes Rudolph</name>
+            <email>johannes.rudolph@gmail.com</email>
+            <url>https://virtual-void.net</url>
+        </developer>
+    </developers>
+    <properties>
+        <scalaVersion>2.12</scalaVersion>
+        <sbtVersion>1.0</sbtVersion>
+        <extraDependencyAttributes xml:space="preserve">+e:sbtVersion:#@#:+1.0:#@#:+module:#@#:+sbt-compat:#@#:+e:scalaVersion:#@#:+2.12:#@#:+organisation:#@#:+com.dwijnand:#@#:+branch:#@#:+@#:NULL:#@:#@#:+revision:#@#:+1.1.0:#@#:</extraDependencyAttributes>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.12.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-sbt</groupId>
+            <artifactId>sbt</artifactId>
+            <version>1.0.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-core_2.12</artifactId>
+            <version>3.9.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dwijnand</groupId>
+            <artifactId>sbt-compat</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+    </dependencies>
+</project>
