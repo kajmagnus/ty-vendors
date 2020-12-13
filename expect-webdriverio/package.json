@@ -1,0 +1,71 @@
+{
+  "name": "expect-webdriverio",
+  "version": "1.3.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "run-s clean compile",
+    "clean": "run-p clean:*",
+    "clean:build": "rimraf ./lib",
+    "clean:tests": "rimraf test-types/**/node_modules && rimraf test-types/**/dist",
+    "compile": "tsc --build tsconfig.build.json",
+    "release": "npm run release:patch",
+    "release:patch": "np patch",
+    "release:minor": "np minor",
+    "release:major": "np major",
+    "test": "run-s test:*",
+    "test:lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test:unit": "jest",
+    "watch": "npm run compile -- --watch",
+    "test:types": "node test-types/copy && npm run ts && npm run clean:tests",
+    "ts": "run-p ts:*",
+    "ts:default": "cd test-types/default && tsc --incremental",
+    "ts:jest": "cd test-types/jest && tsc --incremental",
+    "ts:jasmine": "cd test-types/jasmine && tsc --incremental"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdriverio/expect-webdriverio.git"
+  },
+  "keywords": [
+    "expect-webdriverio",
+    "expect",
+    "webdriverio",
+    "wdio"
+  ],
+  "author": "Mykola Grybyk <mykola.grybyk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webdriverio/expect-webdriverio/issues"
+  },
+  "homepage": "https://github.com/webdriverio/expect-webdriverio#readme",
+  "devDependencies": {
+    "@types/jasmine": "^3.5.11",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.23",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "codecov": "^3.7.0",
+    "eslint": "^7.4.0",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "np": "^6.3.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.4",
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7",
+    "webdriverio": "^6.3.0"
+  },
+  "types": "types/jest-global.d.ts",
+  "typeScriptVersion": "3.8.3",
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s compile"
+    }
+  },
+  "dependencies": {
+    "expect": "^26.1.0",
+    "jest-matcher-utils": "^26.1.0"
+  }
+}

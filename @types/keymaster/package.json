@@ -1,0 +1,16 @@
+{
+    "name": "@types/keymaster",
+    "version": "1.6.28",
+    "description": "TypeScript definitions for keymaster v1.6.2",
+    "license": "MIT",
+    "author": "Martin W. Kirst <https://github.com/nitram509>",
+    "main": "",
+    "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typings": "index.d.ts",
+    "typesPublisherContentHash": "4c71f5c5711d16f6959085da5b6449d840a186b8a81ef94ae638b96e21e9d921"
+}
