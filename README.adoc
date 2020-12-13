@@ -1,0 +1,73 @@
+In `source/` you'll find an OpenResty source release.
+It's unzipped so it's simpler to `git diff` changes
+between OpenResty versions.
+
+Why is this a submodule? So can squash, if the Git history gets too large.
+So the main repo can stay somewhat small. Or if changing from OpenResty to
+something else — then, would be a bit weird to keep all OpenResty Git history,
+in the main repo, although no longer in use.
+
+
+### Upgrading OpenResty
+
+To download a new version of OpenResty, check the PGP signature,
+and overwrite `source/` with the new version, do:
+
+Download via: https://openresty.org/en/download.html, e.g. v1.19.3.1:
+
+  cd images/web/openresty/  # this dir
+  wget https://openresty.org/download/openresty-1.19.3.1.tar.gz
+  wget https://openresty.org/download/openresty-1.19.3.1.tar.gz.asc
+
+Check signature. The download page reads: (as of 2020-12-13)
+
+> All the releases are signed by the public PGP key A0E98066 of Yichun Zhang
+
+So, get that key:
+
+  gpg --keyserver pgpkeys.mit.edu --keyserver-options timeout=10 --recv-key A0E98066
+
+(Why `pgpkeys.mit.edu`? Apparently we can use that MIT keyserver,
+see this Git issue and commit:
+https://github.com/openresty/openresty.org/issues/30,
+https://github.com/openresty/openresty.org/pull/32/files,
+and this related blog post:
+https://asterisk-pbx.ru/wiki/blog/openresty.
+There are some well-known keyservers, e.g. `pgpkeys.mit.edu`,
+`hkp://keyserver.ubuntu.com:80`, `ha.pool.sks-keyservers.net`.)
+
+That might print something like:
+
+  gpg: key B550E09EA0E98066: 1 signature not checked due to a missing key
+  gpg: /home/user/.gnupg/trustdb.gpg: trustdb created
+  gpg: key B550E09EA0E98066: public key "Yichun Zhang (agentzh) <agentzh@gmail.com>" imported
+  gpg: no ultimately trusted keys found
+  gpg: Total number processed: 1
+  gpg:               imported: 1
+
+Now verify the `tar.gz`:
+
+  gpg --verify openresty-1.19.3.1.tar.gz.asc
+
+Should print sth like:
+
+  gpg: assuming signed data in 'openresty-1.19.3.1.tar.gz'
+  gpg: Signature made Fri 06 Nov 2020 09:03:29 AM CET
+  gpg:                using RSA key B550E09EA0E98066
+  gpg: Good signature from "Yichun Zhang (agentzh) <agentzh@gmail.com>" [unknown]
+  gpg: WARNING: This key is not certified with a trusted signature!
+  gpg:          There is no indication that the signature belongs to the owner.
+  Primary key fingerprint: 2545 1EB0 8846 0026 195B  D62C B550 E09E A0E9 8066
+
+Note that the key ends with `A0E98066` and is from Yichun Zhang. Since
+you haven't signed Yichun's key with a key of your own, GPG logs a warning.
+
+Now, move the old `source/` dir, and unzip the new version to `source/`:
+
+  mv source source-old
+  tar -xf openresty-1.19.3.1.tar.gz
+  mv openresty-1.19.3.1 source
+
+Then maybe look at the changes in Git. And `git add source`. Delete `source-old/`.
+
+In Ty's main repo (at `../../../`), `git add` and `commit` this submodule.
