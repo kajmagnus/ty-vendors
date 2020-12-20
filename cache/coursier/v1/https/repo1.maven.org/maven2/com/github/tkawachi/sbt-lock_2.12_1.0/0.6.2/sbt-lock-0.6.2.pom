@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.tkawachi</groupId>
+    <artifactId>sbt-lock</artifactId>
+    <packaging>jar</packaging>
+    <description>sbt-lock</description>
+    <version>0.6.2</version>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>http://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <name>sbt-lock</name>
+    <organization>
+        <name>com.github.tkawachi</name>
+    </organization>
+    <scm>
+        <url>https://github.com/tkawachi/sbt-lock/</url>
+        <connection>scm:git:github.com:tkawachi/sbt-lock.git</connection>
+    </scm>
+    <url>https://github.com/tkawachi/sbt-lock/</url>
+    <developers>
+        <developer>
+            <id>kawachi</id>
+            <name>Takashi Kawachi</name>
+            <url>https://github.com/tkawachi</url>
+        </developer>
+    </developers>
+    <properties>
+        <scalaVersion>2.12</scalaVersion>
+        <sbtVersion>1.0</sbtVersion>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.12.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-sbt</groupId>
+            <artifactId>sbt</artifactId>
+            <version>1.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
