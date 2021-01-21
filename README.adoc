@@ -1,0 +1,34 @@
+The packages were installed like so, from inside the container:
+
+```
+opm install fffonion/lua-resty-acme
+```
+    
+Thereafter I copied the installed files to outside the Docker container (via a
+read-write mounted host directory), and placed here in
+`./usr-local-openresty-site/`, so now we can just Dockerfile COPY to install
+lua-resty-acme, when building the Docker image. No need to run 'opm' and fetch
+external things from GitHub; can build offline.
+
+Apparently this approach is fine — opm installs only pure Lua packages. From
+the docs:
+
+> opm currently only supports pure Lua libraries but we will add support for
+> Lua libraries in pure C or with some C components very soon
+
+https://opm.openresty.org/docs#description
+
+Meaning, opm downloads just Lua code; it won't compile any C code, or do any
+build steps as part of the installation.  So, should be fine to just copy the
+Lua files in the same way as opm itself would have done.
+
+(In Nodejs, though, some packages start compiling C code via node-gyp when they get installed.)
+
+
+And Wangchong @fffonion the lua-resty-acme project author agrees:
+
+> Correct, opm only download lua files
+
+https://github.com/fffonion/lua-resty-acme/issues/29
+
+
