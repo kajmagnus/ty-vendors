@@ -384,12 +384,16 @@ end
 function AUTOSSL.ssl_certificate()
   local domain, err = ssl.server_name()
 
-  domain = string.lower(domain)
-
+  -- If the request is to the ip address, e.g. GET http://11.22.33.44/
+  -- and there's no Host header, then 'domain' is nill — then do nothing;
+  -- cannot generate certs for ip numbers.
   if err or not domain then
-    log(ngx_INFO, "ignore domain ", domain, ", err: ", err)
+    log(ngx_INFO, "ignore domain: ", domain, ", err: ", err)
     return
   end
+
+  domain = string.lower(domain)
+
   if domain_whitelist_callback and not domain_whitelist_callback(domain) then
     log(ngx_INFO, "domain ", domain, " does not pass whitelist_callback, skipping")
     return
