@@ -31,7 +31,7 @@
     "ansi-colors@^4.1.1",
     "blacklist@^1.1.4",
     "bootstrap@3.1.1",
-    "chromedriver@^89.0.0",
+    "chromedriver@^91.0.0",
     "classnames@^2.2.6",
     "create-react-class@^15.6.3",
     "del@^5.1.0",
@@ -60,7 +60,7 @@
     "keymaster@^1.6.2",
     "lodash-cli@^4.17.5",
     "lodash@^4.17.15",
-    "markdown-it@^12.0.3",
+    "markdown-it@^12.0.6",
     "merge2@^1.3.0",
     "minimist@^1.2.5",
     "moment@^2.24.0",
@@ -458,7 +458,7 @@
     "chownr@^1.1.1": "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b",
     "chrome-launcher@^0.13.1": "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-0.13.4.tgz#4c7d81333c98282899c4e38256da23e00ed32f73",
     "chrome-launcher@^0.13.4": "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-0.13.4.tgz#4c7d81333c98282899c4e38256da23e00ed32f73",
-    "chromedriver@^89.0.0": "https://registry.yarnpkg.com/chromedriver/-/chromedriver-89.0.0.tgz#a6f27aa306400651a20dc04976fe5b2c4e65d61a",
+    "chromedriver@^91.0.0": "https://registry.yarnpkg.com/chromedriver/-/chromedriver-91.0.0.tgz#b8c07d715c1bde2ed5817757e923bd65565c8f94",
     "ci-info@^2.0.0": "https://registry.yarnpkg.com/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46",
     "cjs-module-lexer@^0.6.0": "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-0.6.0.tgz#4186fcca0eae175970aee870b9fe2d6cf8d5655f",
     "class-utils@^0.3.5": "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463",
@@ -1182,7 +1182,7 @@
     "map-obj@^1.0.1": "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d",
     "map-stream@^0.1.x": "https://registry.yarnpkg.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194",
     "map-visit@^1.0.0": "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f",
-    "markdown-it@^12.0.3": "https://registry.yarnpkg.com/markdown-it/-/markdown-it-12.0.3.tgz#8d1e47daf1d716d63610495eb93f6665573e4abe",
+    "markdown-it@^12.0.6": "https://registry.yarnpkg.com/markdown-it/-/markdown-it-12.0.6.tgz#adcc8e5fe020af292ccbdf161fe84f1961516138",
     "marky@^1.2.0": "https://registry.yarnpkg.com/marky/-/marky-1.2.1.tgz#a3fcf82ffd357756b8b8affec9fdbf3a30dc1b02",
     "matchdep@^2.0.0": "https://registry.yarnpkg.com/matchdep/-/matchdep-2.0.0.tgz#c6f34834a0d8dbc3b37c27ee8bbcb27c7775582e",
     "md5@^2.2.1": "https://registry.yarnpkg.com/md5/-/md5-2.3.0.tgz#c3da9a6aae3a30b46b7b0c349b87b110dc3bda4f",
@@ -1892,13 +1892,7 @@
       "build/config.gypi",
       "build/fibers.target.mk"
     ],
-    "chromedriver@87.0.4": [
-      "lib",
-      "lib/chromedriver",
-      "lib/chromedriver/chromedriver",
-      "lib/chromedriver/chromedriver_linux64.zip"
-    ],
-    "chromedriver@89.0.0": [
+    "chromedriver@91.0.0": [
       "lib",
       "lib/chromedriver",
       "lib/chromedriver/chromedriver",
